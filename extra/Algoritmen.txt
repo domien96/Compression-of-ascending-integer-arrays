@@ -1,0 +1,37 @@
+boom encoderen:
+normaal algoritme + voeg bit 1 op einde toe!!!
+
+encoded boom heropstellen:
+1: maak een node R aan die als wortel zal dienen.
+De huidige node CUR is R.
+2: lees volgende bit b
+als b is 0 (interne node)
+	maak nieuwe node N aan.
+4:	als CUR links vrij heeft hang N hier , (zoniet hang hem rechts) en ga terug naar 2 met CUR = N.
+	als CUR zowel links als rechts als kinderen heeft, dan
+		als een CUR een ouder heeft CUR = ouder van CUR en probeer 4 opnieuw.
+		(CUR heeft altijd een ouder in het geval b==0, CUR is maw nooit wortel R )
+	
+
+als b is 1 (blad)
+	maak nieuwe node N aan.
+	lees volgende 8 bits (karakterteken) en ken dit toe aan N.
+3:	als CUR links vrij heeft hang N hier , (zoniet hang hem rechts) en ga terug naar 2 met (CUR = CUR).
+	als CUR zowel links als rechts als kinderen heeft, dan
+		als een CUR een ouder heeft CUR = ouder van CUR en probeer 3 opnieuw.
+		als CUR geen ouder heeft (CUR is wortel R), is het algoritme beëindigd.
+
+prefixcodes uitlezen:
+cur node is wortel R
+Voer volgende uit tot einde van de file.
+creer een buffer van 16.
+1: lees volgende bit b uit buffer indien EOF nog niet gelezen is.
+Indien EOF al in buffer, lees dan enkel de zinvolle bits uit de buffer adhv het meegegeven aantal garbage bits.
+2: 	indien b==1
+		cur is rechterkind 
+   	indien b==0
+		cur is linkerkind
+	is deze curnode een blad?
+	NEE ga 1
+	JA schrijf corresponderend symbool en CUR = wortel R
+	
