@@ -1,0 +1,2 @@
+comprimeer1: standaard/Main.c common/Services.c standaard/Huffman_tree.c standaard/Huffman_node.c standaard/huffman_code_tag.c standaard/Huffman.c standaard/FrequencyCounter.c common/Bitstream.c standaard/rle.c
+comprimeer2: specifiek/Main.c common/Services.c standaard/Huffman_tree.c standaard/Huffman_node.c standaard/huffman_code_tag.c standaard/Huffman.c standaard/FrequencyCounter.c common/Bitstream.c standaard/rle.c specifiek/HuffmanSpecifiek.c
